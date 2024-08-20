@@ -26,6 +26,7 @@
         header img {
             max-height: 50px;
         }
+
         .content {
             display: flex;
             flex-direction: column;
@@ -66,10 +67,27 @@
             margin-bottom: 10px;
         }
 
+        .seller-info span {
+            color: blue;
+        }
+
         .product-price {
             font-size: 28px;
             color: #333;
             margin-bottom: 20px;
+        }
+
+        .seller-rating {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .seller-rating img {
+            height: 20px;
+            margin-left: 10px;
         }
 
         .buy-button {
@@ -109,11 +127,11 @@
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            	margin-bottom: 20px;
-134	    }
-135	
-136	    .description-section {
-137	        margin-bottom: 30px; /* Espacio adicional entre descripción y características */
+            margin-bottom: 20px;
+        }
+
+        .description-section {
+            margin-bottom: 30px; /* Espacio adicional entre descripción y características */
         }
 
         .product-description, .product-features {
@@ -143,12 +161,12 @@
         .form-container {
             display: block;
             padding: 20px;
-            margin: 10px;
             width: 100%;
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
+            box-sizing: border-box;
         }
 
         .form-container label {
@@ -179,25 +197,12 @@
         .form-container button:hover {
             background-color: #ffb700;
         }
-        .seller-rating {
-            display: flex;
-            align-items: center;
-            font-size: 16px;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        .seller-rating img {
-            height: 20px;
-            margin-left: 10px;
-        }
     </style>
 </head>
 <body>
 
 <header>
     <img src="preview.png" alt="Logo TiendaLibre">
-
 </header>
 
 <div class="content">
@@ -209,7 +214,7 @@
             <label for="product-price">Precio:</label>
             <input type="text" id="product-price" name="product-price" required>
 
-            <label for="seller-info">Vendedor:</label>
+            <label for="seller-info">Vendido por:</label>
             <input type="text" id="seller-info" name="seller-info" required>
 
             <label for="product-description">Descripción:</label>
@@ -231,26 +236,25 @@
         </div>
         <div class="right-section">
             <div class="product-name" id="product-name-display"></div>
+            <div class="seller-info" id="seller-info-display"></div>
             <div class="seller-rating">
                 Calificación del Vendedor:
-                <img src="5-stars.png" alt="5 estrellas">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-                  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
                 </svg>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-                  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
                 </svg>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-                  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-                </svg>
-                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-                  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
                 </svg>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-                  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
                 </svg>
             </div>
-            <div class="seller-info" id="seller-info-display"></div>
             <div class="product-price" id="product-price-display"></div>
             <button id="buy-button" class="buy-button">Comprar</button>
         </div>
