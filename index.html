@@ -227,9 +227,11 @@
             <label for="product-description">Descripción:</label>
             <textarea id="product-description" name="product-description" rows="4" required></textarea>
 
+            <!--
             <label for="product-features">Características (separadas por comas):</label>
             <input type="text" id="product-features" name="product-features" required>
-
+            -->
+            
             <label for="product-image">Imagen del Producto:</label>
             <input type="file" id="product-image" name="product-image" accept="image/*" required>
 
@@ -273,12 +275,15 @@
         <div class="product-description" id="product-description-display"></div>
     </div>
 
+    <!--
     <div class="features-section" id="features-section" style="display:none;">
         <h3>Características del Producto</h3>
         <div class="product-features">
             <ul id="product-features-display"></ul>
-        </div>
+        </div>        
     </div>
+    -->
+
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
@@ -303,10 +308,11 @@
         const descriptionContainer = document.getElementById('product-description-display');
         descriptionContainer.innerHTML = description.split('\n').map(paragraph => `<p>${paragraph}</p>`).join('');
 
+        /*
         // Mostrar características
         const featuresList = document.getElementById('product-features-display');
         featuresList.innerHTML = features.map(feature => `<li>${feature}</li>`).join('');
-
+        */
         // Mostrar imagen del producto
         const reader = new FileReader();
         reader.onload = function(e) {
